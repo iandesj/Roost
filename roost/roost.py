@@ -61,6 +61,7 @@ def run_entire_step(step, skip_env):
 
 
 @click.command()
+@click.version_option('0.0.1')
 @click.option('--app', help='Path to the app you want to operate.')
 @click.option('--full', default=False, is_flag=True, help='Run all commands for the operating app.')
 @click.option('--build', flag_value='build', help='Run build command for the operating app')
