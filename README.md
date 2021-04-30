@@ -88,3 +88,5 @@ Things I want to do or have done.
 - [x] Basic stages working
 - [ ] Project level config for multiple and custom deploy groups
 - [ ] Parallel executions for app deploys
+- [ ] More stages...some that come to mind could be `migrate` accompanied with `pre/post` and a `tag` stage.
+- [ ] Custom stages, or at least creating alias to the built-in stages
