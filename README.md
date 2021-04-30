@@ -2,6 +2,47 @@ Roost [WIP]
 =====
 The best cli deploy tool for mono-repos.
 
+# Usage
+Each app in the repo will have it's own config, this will allow the passing of the app path to the cli and all stage related commands can now be accessed.kj:w
+## Example project usage
+```
+proj_root/
+    client_app/
+        ...misc files
+        .roost.yaml
+    server_app/
+        ...misc files
+        .roost.yaml
+    other_app/
+        ...misc files
+        .roost.yaml
+    ...misc files
+    .roost.yaml
+```
+## Executing an app build, deploy, or other stage execution
+This is a very basic example where within the proj_root directory from the example above, we can execute a "full" or `--full` execution of all stages configured in the client_app/.roost.yaml file.
+```shell
+$ roost --app client_app --full
+```
+
+You're also allowed to pass environment variables like so.
+```shell
+$ roost --app client_app --full --env MYENV=heyguys --env HI=oh hi
+```
+
+Or specify an individual stage or even multiple stages to execute.
+```shell
+$ # specify a single
+$ roost --app client_app --build
+$
+$ # or several
+$ roost --app client_app --build --deploy --clean
+```
+# How to structure the root project's YAML config [WIP]
+This is a big work in progress, that said although this is optional, it would be safe to have for future versions.
+```yaml
+mode: root
+```
 # How to structure each application's YAML config
 ```yaml
 mode: app
