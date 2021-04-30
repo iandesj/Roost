@@ -3,7 +3,7 @@ Roost [WIP]
 The best cli deploy tool for mono-repos.
 
 # Usage
-Each app in the repo will have it's own config, this will allow the passing of the app path to the cli and all stage related commands can now be accessed.kj:w
+Each app in the repo will have it's own config, this will allow the passing of the app path to the cli and all stage related commands can now be accessed.
 ## Example project usage
 ```
 proj_root/
