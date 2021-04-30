@@ -38,11 +38,37 @@ $
 $ # or several
 $ roost --app client_app --build --deploy --clean
 ```
+
 # How to structure the root project's YAML config [WIP]
 This is a big work in progress, that said although this is optional, it would be safe to have for future versions.
 ```yaml
 mode: root
+groups:
+  first_group:test:
+    parallel: true
+    apps:
+      client_app:
+        env:
+          ENV: test
+        stages:
+          - build
+          - deploy
+      other_app:
+        stages:
+          - deploy
+  second_group:test:
+    parallel: false
+    env:
+      ENV: test
+    apps:
+      server_app:
+      backup_app:
 ```
+## What execution might look like
+```shell
+$ roost --group first_group:test
+```
+
 # How to structure each application's YAML config
 ```yaml
 mode: app
@@ -90,3 +116,4 @@ Things I want to do or have done.
 - [ ] Parallel executions for app deploys
 - [ ] More stages...some that come to mind could be `migrate` accompanied with `pre/post` and a `tag` stage.
 - [ ] Custom stages, or at least creating alias to the built-in stages
+- [ ] Potential `roost` stage that provides some special features but also may provide configuration for dependency chains
