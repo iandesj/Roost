@@ -3,7 +3,7 @@ Roost [WIP]
 The best cli deploy tool for mono-repos.
 
 # Usage
-Each app in the repo will have it's own config, this will allow the passing of the app path to the cli and all stage related commands can now be accessed.kj:w
+Each app in the repo will have it's own config, this will allow the passing of the app path to the cli and all stage related commands can now be accessed.
 ## Example project usage
 ```
 proj_root/
@@ -88,3 +88,5 @@ Things I want to do or have done.
 - [x] Basic stages working
 - [ ] Project level config for multiple and custom deploy groups
 - [ ] Parallel executions for app deploys
+- [ ] More stages...some that come to mind could be `migrate` accompanied with `pre/post` and a `tag` stage.
+- [ ] Custom stages, or at least creating alias to the built-in stages
