@@ -1,16 +1,19 @@
 mode: app
-build:
-  env:
-    ENV: test
-  exec:
-    - npm run generate:spa
-deploy:
-  exec:
-    - npm run backup:test
-    - npm run remove:test
-    - npm run upload:test
-    - npm run invalidate:test
-clean:
-  exec:
-    - rm -rf dist
-  script: cleanup.sh
+runtime: node:14
+
+stages:
+  build:
+    env:
+      ENV: test
+    exec:
+      - npm run generate:spa
+  deploy:
+    exec:
+      - npm run backup:test
+      - npm run remove:test
+      - npm run upload:test
+      - npm run invalidate:test
+  clean:
+    exec:
+      - rm -rf dist
+    script: cleanup.sh

@@ -1,1 +1,17 @@
 mode: root
+
+apps:
+  parallel:
+    default:
+      - app_one
+      - app_two
+    cleanup:
+      scope: root
+      exec: command to run
+      script: cleanup.sh
+  sequence:
+    default:
+      - app_three
+      - app_four
+    cleanup:
+      scope: individual

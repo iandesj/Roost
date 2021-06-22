@@ -66,7 +66,7 @@ def run_entire_step(step, skip_env):
 @click.option('--full', default=False, is_flag=True, help='Run all commands for the operating app.')
 @click.option('--build', flag_value='build', help='Run build command for the operating app')
 @click.option('--deploy', flag_value='deploy', help='Run deploy command for the operating app')
-@click.option('--clean', flag_value='clean', help='Run deploy command for the operating app')
+@click.option('--clean', flag_value='clean', help='Run clean command for the operating app')
 @click.option('--skip-env', flag_value=True, help='Skip environmental variable assignment for the operating app')
 @click.option('--env', '-e', help='Provide environment variables for the operating app in the format: ENV=myenv', multiple=True)
 def main(app, full, build, deploy, clean, skip_env, env):
